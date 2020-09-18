@@ -1,0 +1,3 @@
+database: new table: list
+id varchar(45) not null primary key
+password varchar(45) not null
