@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>
+<%= title %>
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+<h1><%= title %></h1>
+<p style="display: inline;">하반기 운동회 신청자
+<form method="get" action="/new" style="float: right;"><button type="submit" class="btn btn-warning" >신청하기</button></form>
+</p>
+
+
+<table class="table"> <!-- ToDo 목록 -->
+<thead>
+<tr>
+<th>학번</th> 
+<th>이름</th>
+<th>전화번호</th>
+<th>삭제</th>
+<th>수정</th>
+</tr>
+</thead>
+<tbody>
+    <%
+    for (var i=0;i<lists.length;i++){
+        let data=lists[i];
+        console.log(data);
+    
+    %>
+    <tr>
+        <td> <%=data.uid %> </td>
+        <td> <%=data.first_name %> </td>
+        <td> <%=data.tel %> </td>
+        <td> <form method="post" action="/delete/<%=data.uid%>"><button type="sumbit" class=" btn btn-danger">삭제</button></form></td>
+        <td> <form method="get" action="/update"><button type="sumbit" class=" btn btn-primary">수정</button></form></td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>
+
+<div class="oinput-group" style="padding-top: 20px; display: flex; width: 400px;">
+            <input type="text" class="tform-control" placeholder="학번 검색 " style="width:200px; justify-content: center;" name="uid">
+            <button class="btn btn-secondary" type="button">찾기</button>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>운동회 참가</title>
+        <meta charset="utf-8">
+        <style>
+            .container h1{
+                margin-left: 20px;
+            }
+            ul{
+                list-style: none;
+            }
+            label.title{
+                font-weight: bold;
+                width: 80px;
+                float:left;
+            }
+            li{
+                margin-bottom: 20px;
+            }
+            div.button{
+                width: 600px;
+                text-align: left;
+                margin-left: 20px;
+            }
+            fieldset{
+                width: 400px;
+                margin: 15px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>운동회 참가 신청서</h1>
+            <fieldset>
+                <form method="post" action="/update">
+                <ul>
+                    <li>
+                        <label for="uid" class="title">학번</label>
+                        <input type="number" id="uid" name="uid" autofocus="true" required>
+                    </li>
+                    <li>
+                        <label for="uname" class="title">이름</label>
+                        <input type="text" id="uname" name="uname" autofocus="true" required>
+                    </li>
+                    <li>
+                        <label for="utel" class="title">휴대폰</label>
+                        <input type="tel" id="utel" name="utel" required>
+                    </li>
+                    <li>
+                        <button type="submit">수정하기</button>
+                    </li>
+                </ul>
+            </form>
+            </fieldset>
+    </div>
+    </body>
+</html>
